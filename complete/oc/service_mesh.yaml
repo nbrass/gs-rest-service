@@ -17,6 +17,27 @@ spec:
             port:
               number: 8080
 ---
+kind: VirtualService
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: greeting-traces
+spec:
+  hosts:
+    - '*'
+  gateways:
+    - greeting-gateway
+  http:
+    - match:
+        - uri:
+            prefix: /greetingtraces
+      rewrite:
+        uri: /actuator/httptrace
+      route:
+        - destination:
+            host: greeting
+            port:
+              number: 8080
+---
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
