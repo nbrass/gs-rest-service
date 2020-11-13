@@ -13,3 +13,11 @@ Add Service Mesh config:
 	oc apply -f service_mesh.yaml
 
 -> http://istio-ingressgateway-istio-system.apps.slider.os.fyre.ibm.com/greeting?name=John
+
+LOCAL
+-----
+Start with: ./mvnw spring-boot:run
+
+-> http://localhost:8080/greeting?name=John
+
+-> http://localhost:8080/actuator/httptrace
