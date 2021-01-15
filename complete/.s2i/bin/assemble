@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "Before assembling..."
+
+/usr/libexec/s2i/assemble
+rc=$?
+
+echo "After assembling with returncode=${rc} ..."
+
+exit $rc

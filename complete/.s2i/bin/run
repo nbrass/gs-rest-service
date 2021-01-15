@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "Before calling run..."
+exec /usr/libexec/s2i/run
